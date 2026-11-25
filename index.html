@@ -19,6 +19,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #4ed589;outline-offset:3p
 .fx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .fx-wide{grid-column:span 2}
 .hd-btn{white-space:nowrap}
+.hd-logo,.hd-logo img{flex:none}
+@media (max-width:400px){.hd-row{gap:8px!important}.hd-logo img:first-child{height:17px!important}.hd-logo img:last-child{height:15px!important}.hd-btn{padding:0 11px!important;font-size:13px!important}}
 footer a{text-decoration:none}
 .tm-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 html{scroll-behavior:smooth}
@@ -45,7 +47,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
   <header style="position: sticky; top: 0; z-index: 20; padding: 8px 0; background: rgba(10,10,10,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.06)">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px); display: flex; align-items: center; justify-content: space-between; gap: 24px" class="hd-row">
       <div style="display: flex; align-items: center; gap: 24px">
-        <a href="#top" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none">
+        <a class="hd-logo" href="#top" aria-label="CekSaham.AI, ke atas" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none">
           <img src="assets/icon.webp" alt="" style="height: 20px; width: auto">
           <img src="assets/logo.webp" alt="CekSaham" style="height: 18px; width: auto">
         </a>
@@ -534,11 +536,11 @@ class Component extends DCLogic {
       };
     });
     var act = this.state.active, dd = this.state.dd;
-    function nv(k) { var on = act === k; return [on ? '#f5f5f5' : '#a3a3a3', on ? 'rgba(255,255,255,.08)' : 'transparent', on ? 'location' : 'false']; }
+    function nv(k) { var on = act === k; return [on ? '#f5f5f5' : '#a3a3a3', 'transparent', on ? 'location' : 'false']; }
     var t = nv('top'), f = nv('fitur'), te = nv('tentang'), h = nv('harga'), q = nv('faq');
     return {
       topFg: t[0], topBg: t[1], topCur: t[2],
-      fiturFg: dd ? '#f5f5f5' : f[0], fiturBg: dd ? 'rgba(255,255,255,.08)' : f[1],
+      fiturFg: dd ? '#f5f5f5' : f[0], fiturBg: 'transparent',
       tentangFg: te[0], tentangBg: te[1], tentangCur: te[2],
       hargaFg: h[0], hargaBg: h[1], hargaCur: h[2],
       faqFg: q[0], faqBg: q[1], faqCur: q[2],
