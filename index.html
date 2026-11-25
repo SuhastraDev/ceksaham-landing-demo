@@ -19,6 +19,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #4ed589;outline-offset:3p
 .fx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .fx-wide{grid-column:span 2}
 .hd-btn{white-space:nowrap}
+.hero-btns a{justify-content:center}
+@media (max-width:640px){.hero-btns{width:100%;max-width:340px;flex-direction:column}.hero-btns a{width:100%;box-sizing:border-box}}
+.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.faq-grid{grid-template-columns:minmax(0,1fr)}}
 .hd-logo,.hd-logo img{flex:none}
 @media (max-width:400px){.hd-row{gap:8px!important}.hd-logo img:first-child{height:17px!important}.hd-logo img:last-child{height:15px!important}.hd-btn{padding:0 11px!important;font-size:13px!important}}
 footer a{text-decoration:none}
@@ -71,7 +75,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
           </div>
           <a class="nv" href="#tentang" aria-current="{{ tentangCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ tentangFg }}; background: {{ tentangBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ tentangCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ tentangFg }}; background: {{ tentangBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Tentang</a>
           <a class="nv" href="#harga" aria-current="{{ hargaCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ hargaFg }}; background: {{ hargaBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ hargaCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ hargaFg }}; background: {{ hargaBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Harga</a>
-          <a class="nv" href="#faq" aria-current="{{ faqCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ faqCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Edukasi</a>
+          <a class="nv" href="#faq" aria-current="{{ faqCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ faqCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>FAQ</a>
         </nav>
       </div>
       <div style="flex: 1; min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: 8px">
@@ -93,7 +97,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
           <div style="border-bottom: 1px solid #1a1a1a; padding-bottom: 8px"><a href="#fitur" style="display: flex; align-items: center; min-height: 48px; color: {{ fiturFg }}; font-size: 17px; font-weight: 600; text-decoration: none" data-on="click:mmClose" data-bind='{"style": "display: flex; align-items: center; min-height: 48px; color: {{ fiturFg }}; font-size: 17px; font-weight: 600; text-decoration: none"}'>Fitur</a><div style="display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px"><a href="#f-detail" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmClose"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>Detail saham</a><a href="#f-portofolio" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmClose"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>AI Portofolio</a><a href="#contoh" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmBriefing"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>Briefing</a><a href="#f-watchlist" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmClose"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>AI Watchlist</a><a href="#f-comparison" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmClose"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>AI Comparison</a><a href="#f-screener" style="display: flex; align-items: center; gap: 8px; min-height: 40px; color: #c4c4c4; font-size: 14px; text-decoration: none" data-on="click:mmClose"><span aria-hidden="true" style="width: 6px; height: 6px; border-radius: 999px; background: #4ed589"></span>AI Screener</a></div></div>
           <a href="#tentang" aria-current="{{ tentangCur }}" style="display: flex; align-items: center; min-height: 48px; color: {{ tentangFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a" data-on="click:mmClose" data-bind='{"aria-current": "{{ tentangCur }}", "style": "display: flex; align-items: center; min-height: 48px; color: {{ tentangFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a"}'>Tentang</a>
           <a href="#harga" aria-current="{{ hargaCur }}" style="display: flex; align-items: center; min-height: 48px; color: {{ hargaFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a" data-on="click:mmClose" data-bind='{"aria-current": "{{ hargaCur }}", "style": "display: flex; align-items: center; min-height: 48px; color: {{ hargaFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a"}'>Harga</a>
-          <a href="#faq" aria-current="{{ faqCur }}" style="display: flex; align-items: center; min-height: 48px; color: {{ faqFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a" data-on="click:mmClose" data-bind='{"aria-current": "{{ faqCur }}", "style": "display: flex; align-items: center; min-height: 48px; color: {{ faqFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a"}'>Edukasi</a>
+          <a href="#faq" aria-current="{{ faqCur }}" style="display: flex; align-items: center; min-height: 48px; color: {{ faqFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a" data-on="click:mmClose" data-bind='{"aria-current": "{{ faqCur }}", "style": "display: flex; align-items: center; min-height: 48px; color: {{ faqFg }}; font-size: 17px; font-weight: 600; text-decoration: none; border-bottom: 1px solid #1a1a1a"}'>FAQ</a>
         </nav>
         <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px"><a href="#mulai" style="display: inline-flex; align-items: center; justify-content: center; height: 46px; border-radius: 10px; border: 1px solid #333; color: #f5f5f5; font-size: 15px; font-weight: 600; text-decoration: none" data-on="click:mmClose">Masuk</a><a href="#mulai" style="display: inline-flex; align-items: center; justify-content: center; height: 46px; border-radius: 10px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 700; text-decoration: none" data-on="click:mmClose">Coba gratis</a></div>
       </div>
@@ -116,8 +120,8 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
         <h1 style="margin: 0 auto; max-width: 720px; text-align: center; font-size: clamp(32px, 3.8vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em">Pahami saham sebelum ikut beli</h1>
         <p style="margin: 0 auto; max-width: 620px; text-align: center; color: #a3a3a3; font-size: 17px">CekSaham menjelaskan kondisi, harga, dan risiko satu saham dalam bahasa sehari-hari, langsung dari data BEI.</p>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 8px 0 28px">
-          <a href="#mulai" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 24px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 500; text-decoration: none">Coba gratis 7 hari<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
-          <span style="color: #a3a3a3; font-size: 14px">Pro gratis 7 hari · tanpa kartu kredit</span>
+          <div class="hero-btns" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px"><a href="#mulai" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 24px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 500; text-decoration: none">Coba gratis 7 hari<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a><a href="https://ceksaham.ai/stocks/BBCA" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid #333333; background: rgba(10,10,10,.6); color: #f5f5f5; font-size: 15px; font-weight: 500; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>Lihat contoh BBCA</a></div>
+          <span style="max-width: 340px; text-align: center; color: #a3a3a3; font-size: 14px">Pro gratis 7 hari · tanpa kartu kredit · contoh BBCA bisa dilihat tanpa daftar</span>
         </div>
       </div>
       <div class="hv-wrap" style="position: relative; max-width: 860px; margin: 0 auto"><video preload="metadata" class="hv" id="hero-video" src="assets/ceksaham-demo.mp4" poster="assets/poster.webp" autoplay muted loop playsinline preload="auto" aria-label="Video pengenalan CekSaham: detail saham BBCA, AI Portofolio, AI Watchlist, dan AI Comparison" style="display: block; margin: 0 auto; width: 100%; max-width: 860px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid #2a2a2a; background: #0a0a0a; box-shadow: 0 0 0 1px rgba(78,213,137,.08), 0 30px 80px -20px rgba(0,0,0,.95), 0 60px 160px -40px rgba(78,213,137,.28)"></video><button class="hv-fs" type="button" aria-label="Putar video layar penuh" data-on="click:vFull"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"></path></svg>Layar penuh</button></div>
@@ -160,7 +164,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
               <h3 style="margin: 14px 0 0; font-size: 24px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25">Skor kesehatan dan lima aspek, sekali lihat</h3>
               <p style="margin: 10px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Skor 0–100 dari laporan keuangan, plus radar kesehatan, dividen, keuangan, aliran dana, dan masa lalu, lengkap dengan alasannya.</p>
             </div>
-            <a href="#contoh" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; color: #4ed589; font-size: 14px; font-weight: 600; text-decoration: none">Lihat contoh BBCA<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a href="https://ceksaham.ai/stocks/BBCA" target="_blank" rel="noopener" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; color: #4ed589; font-size: 14px; font-weight: 600; text-decoration: none">Lihat contoh BBCA<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
           </div>
           <div class="fx-vis" aria-hidden="true" style="flex: 1 1 300px; display: flex; align-items: center; justify-content: center; gap: 22px; padding: 24px">
             <div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
@@ -432,6 +436,24 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
     </div>
   </section>
 
+  <!-- FAQ: menjawab keraguan sebelum ajakan penutup -->
+  <section id="faq" style="padding: clamp(72px, 10vw, 112px) 0 clamp(48px, 7vw, 72px); border-top: 1px solid #1f1f1f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="max-width: 720px; margin: 0 auto 40px; text-align: center">
+        <p style="margin: 0 0 12px; color: #4ed589; font-size: 14px; font-weight: 600">FAQ</p>
+        <h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em">Pertanyaan yang sering muncul</h2>
+      </div>
+      <div class="faq-grid">
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Apakah CekSaham memberi sinyal beli atau jual?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Tidak. CekSaham adalah alat edukasi dan riset. Kami menjelaskan kondisi saham, tapi tidak memberi rekomendasi beli, jual, atau tahan. Keputusan tetap di tanganmu.</p></div>
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Dari mana datanya?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Dari data perdagangan dan laporan keuangan emiten di Bursa Efek Indonesia (BEI), lalu kami olah jadi skor dan penjelasan yang mudah dibaca.</p></div>
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Apa yang terjadi setelah 7 hari Pro gratis?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Akunmu otomatis kembali ke paket Gratis tanpa tagihan. Kamu tidak perlu memasukkan kartu kredit untuk mencoba.</p></div>
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Berapa harga Pro?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Rp59.000 per bulan, atau Rp150.000 per 3 bulan (hemat Rp27.000). Bisa berhenti kapan saja.</p></div>
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Bisa beli saham di CekSaham?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Tidak. CekSaham bukan platform transaksi. Jual-beli saham tetap kamu lakukan di aplikasi sekuritasmu.</p></div>
+          <div style="padding: 24px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f"><h3 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4">Apa bedanya dengan aplikasi sekuritas?</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Aplikasi sekuritas dibuat untuk transaksi dan menampilkan banyak angka. CekSaham fokus menjelaskan arti angka itu: seberapa sehat sahamnya, mahal atau murah dibanding biasanya, dan apa risikonya.</p></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Cta10: pita aksen -->
   <section id="mulai" style="padding: 32px 0 clamp(72px, 10vw, 112px)">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
@@ -441,7 +463,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
           <p style="margin: 0; max-width: 560px; color: #a3a3a3; font-size: 18px">Cek kondisinya sekarang. Pro gratis 7 hari, tanpa kartu kredit.</p>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: 8px">
-          <a href="#contoh" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid #333333; background: #0a0a0a; color: #f5f5f5; font-size: 15px; font-weight: 500; text-decoration: none">Lihat contoh BBCA</a>
+          <a href="https://ceksaham.ai/stocks/BBCA" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid #333333; background: #0a0a0a; color: #f5f5f5; font-size: 15px; font-weight: 500; text-decoration: none">Lihat contoh BBCA</a>
           <a href="#mulai" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 500; text-decoration: none">Coba gratis 7 hari</a>
         </div>
       </div>
@@ -449,7 +471,7 @@ section,footer,[id^="f-"]{scroll-margin-top:72px}
   </section>
 
   <!-- Footer2 -->
-  <footer id="faq" style="padding: 64px 0 32px; border-top: 1px solid #1f1f1f">
+  <footer id="kaki" style="padding: 64px 0 32px; border-top: 1px solid #1f1f1f">
     <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
         <div style="flex: 1 1 260px; max-width: 320px">
@@ -512,8 +534,8 @@ class Component extends DCLogic {
     if (v) { v.muted = true; var pr = v.play && v.play(); if (pr && pr.catch) pr.catch(function () {}); }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     // active menu follows the section in view (Kenali CekSaham counts as Fitur)
-    var ids = ['top', 'fitur', 'contoh', 'tentang', 'harga', 'mulai', 'faq'];
-    var as = { contoh: 'fitur', mulai: 'harga' };
+    var ids = ['top', 'fitur', 'contoh', 'tentang', 'harga', 'faq', 'mulai', 'kaki'];
+    var as = { contoh: 'fitur', mulai: 'faq', kaki: 'faq' };
     this.spy = function () {
       var line = window.scrollY + 120, cur = 'top';
       ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top + window.scrollY <= line) cur = as[id] || id; });
