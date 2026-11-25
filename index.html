@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>CekSaham.AI — Demo landing</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CekSaham.AI menjelaskan kondisi, harga, dan risiko saham dalam bahasa sehari-hari. Demo landing page.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="assets/icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/lighthouse.webp">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0;background:#0a0a0a}
+button{font-family:inherit}
+a{color:#4ed589}a:hover{color:#7ee3aa}
+a:focus-visible,button:focus-visible{outline:2px solid #4ed589;outline-offset:3px}
+.fx-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.fx-wide{grid-column:span 2}
+.hd-btn{white-space:nowrap}
+footer a{text-decoration:none}
+.tm-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section,footer,[id^="f-"]{scroll-margin-top:72px}
+.nv{transition:color .2s,background-color .2s}.nv:hover{color:#f5f5f5!important}
+.dd-item{transition:background-color .15s}.dd-item:hover{background:#1a1a1a}
+@media (max-width:1100px){.nv{padding:0 10px!important}}
+@media (max-width:960px){.hd-nav{display:none!important}}
+@media (max-width:900px){.car-txt{flex-basis:300px!important}.car-row{column-gap:40px!important}.fx-cta{min-height:0!important;flex-direction:row!important;flex-wrap:wrap;align-items:center}}
+@media (min-width:641px) and (max-width:900px){.pr-head{min-height:110px!important}.pr-price{min-height:140px!important}}
+@media (min-width:641px) and (max-width:1180px){.tm-head{flex-direction:column;align-items:flex-start!important;gap:12px!important}}
+.fx-sub{display:contents}.sw-wrap{display:contents}.sw-btn{display:none}
+@media (max-width:640px){.tm-head{flex-wrap:nowrap!important}.fx-sub,.tm-grid{display:flex!important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -24px;padding:0 24px 4px;scroll-padding:0 24px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.fx-sub::-webkit-scrollbar,.tm-grid::-webkit-scrollbar{display:none}.fx-sub>div,.tm-grid>div{flex:0 0 84%;box-sizing:border-box;min-width:0;min-height:0!important;scroll-snap-align:start}.sw-wrap{display:block;position:relative;min-width:0}.sw-btn{display:grid;place-items:center;position:absolute;top:50%;z-index:2;width:36px;height:36px;margin-top:-18px;padding:0;border-radius:999px;border:1px solid #333;background:rgba(17,17,17,.92);color:#f5f5f5;cursor:pointer;box-shadow:0 6px 18px rgba(0,0,0,.5);transition:opacity .2s}.sw-prev{left:-18px}.sw-next{right:-18px}.sw-btn:active{transform:scale(.94)}}
+@media (max-width:900px){.fx-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.fx-cta{grid-column:span 2}}
+@media (max-width:640px){.hd-row{gap:12px!important}.hd-search{flex:none!important;width:34px;padding:0!important;justify-content:center}.hd-search-txt{display:none!important}.fx-grid{grid-template-columns:minmax(0,1fr)}.fx-wide,.fx-cta{grid-column:auto}.fx-grid>div{min-height:0!important}.fx-radar{width:150px!important;height:142px!important}.fx-ring{width:96px!important;height:96px!important}.fx-vis{gap:12px!important;padding:8px 16px 28px!important}}
+@media (max-width:440px){.hd-login{display:none!important}}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #0a0a0a; color: #f5f5f5; font-family: Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.6; overflow-x: clip">
+
+  <!-- Navbar1 -->
+  <header style="position: sticky; top: 0; z-index: 20; padding: 8px 0; background: rgba(10,10,10,.78); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.06)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px); display: flex; align-items: center; justify-content: space-between; gap: 24px" class="hd-row">
+      <div style="display: flex; align-items: center; gap: 24px">
+        <a href="#top" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none">
+          <img src="assets/icon.webp" alt="" style="height: 20px; width: auto">
+          <img src="assets/logo.webp" alt="CekSaham" style="height: 18px; width: auto">
+        </a>
+        <nav class="hd-nav" aria-label="Menu utama" style="display: flex; align-items: center; gap: 2px">
+          <a class="nv" href="#top" aria-current="{{ topCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ topFg }}; background: {{ topBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ topCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ topFg }}; background: {{ topBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Beranda</a>
+          <div style="position: relative" data-on="pointerenter:ddOpen pointerleave:ddClose keydown:ddKey">
+            <button class="nv" type="button" aria-haspopup="true" aria-expanded="{{ ddExpanded }}" aria-controls="menu-fitur" style="display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 0 14px; border: 0; border-radius: 8px; color: {{ fiturFg }}; background: {{ fiturBg }}; font-size: 14px; font-weight: 500; cursor: pointer" data-on="click:ddToggle" data-bind='{"aria-expanded": "{{ ddExpanded }}", "style": "display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 0 14px; border: 0; border-radius: 8px; color: {{ fiturFg }}; background: {{ fiturBg }}; font-size: 14px; font-weight: 500; cursor: pointer"}'>Fitur<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate({{ ddRot }}deg); transition: transform .2s" data-bind='{"style": "transform: rotate({{ ddRot }}deg); transition: transform .2s"}'><path d="m6 9 6 6 6-6"></path></svg></button>
+            <div id="menu-fitur" style="position: absolute; left: -8px; top: 100%; padding-top: 10px; opacity: {{ ddOp }}; visibility: {{ ddVis }}; transform: translateY({{ ddY }}px); transition: opacity .18s ease, transform .18s ease, visibility .18s" data-bind='{"style": "position: absolute; left: -8px; top: 100%; padding-top: 10px; opacity: {{ ddOp }}; visibility: {{ ddVis }}; transform: translateY({{ ddY }}px); transition: opacity .18s ease, transform .18s ease, visibility .18s"}'>
+              <div role="menu" aria-label="Fitur CekSaham" style="width: 520px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; padding: 8px; border-radius: 14px; border: 1px solid #262626; background: #111111; box-shadow: 0 24px 60px -20px rgba(0,0,0,.85)">
+                <a class="dd-item" role="menuitem" href="#f-detail" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddPick"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="m7 15 4-4 3 3 5-6"></path></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">Detail saham</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Skor kesehatan dan lima aspek</span></span></a>
+                <a class="dd-item" role="menuitem" href="#f-portofolio" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddPick"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9v9z"></path><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"></path></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">AI Portofolio</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Cek kesehatan portofoliomu</span></span></a>
+                <a class="dd-item" role="menuitem" href="#contoh" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddBriefing"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2z"></path><path d="M18 8h2v10a2 2 0 0 1-2 2"></path><path d="M8 8h6M8 12h6M8 16h4"></path></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">Briefing</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Kabar pasar dan dampaknya</span></span></a>
+                <a class="dd-item" role="menuitem" href="#f-watchlist" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddPick"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">AI Watchlist</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Dikabari kalau ada perubahan</span></span></a>
+                <a class="dd-item" role="menuitem" href="#f-comparison" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddPick"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="7" height="16" rx="2"></rect><rect x="14" y="4" width="7" height="16" rx="2"></rect></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">AI Comparison</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Dua saham berdampingan</span></span></a>
+                <a class="dd-item" role="menuitem" href="#f-screener" style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; text-decoration: none" data-on="click:ddPick"><span style="flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: rgba(78,213,137,.1); border: 1px solid rgba(78,213,137,.2)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span><span style="min-width: 0"><span style="display: block; color: #f5f5f5; font-size: 14px; font-weight: 600; line-height: 1.3">AI Screener</span><span style="display: block; color: #a3a3a3; font-size: 13px; line-height: 1.4">Saring saham tanpa rumus</span></span></a>
+              </div>
+            </div>
+          </div>
+          <a class="nv" href="#tentang" aria-current="{{ tentangCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ tentangFg }}; background: {{ tentangBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ tentangCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ tentangFg }}; background: {{ tentangBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Tentang</a>
+          <a class="nv" href="#harga" aria-current="{{ hargaCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ hargaFg }}; background: {{ hargaBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ hargaCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ hargaFg }}; background: {{ hargaBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Harga</a>
+          <a class="nv" href="#faq" aria-current="{{ faqCur }}" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none" data-bind='{"aria-current": "{{ faqCur }}", "style": "display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; color: {{ faqFg }}; background: {{ faqBg }}; font-size: 14px; font-weight: 500; text-decoration: none"}'>Edukasi</a>
+        </nav>
+      </div>
+      <div style="flex: 1; min-width: 0; display: flex; align-items: center; justify-content: flex-end; gap: 8px">
+        <button class="hd-search" type="button" aria-label="Cari saham, sektor, atau istilah" style="flex: 0 1 300px; min-width: 0; display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px 0 14px; border-radius: 999px; border: 1px solid #262626; background: #111111; color: #a3a3a3; font-size: 14px; cursor: pointer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span class="hd-search-txt" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">Cari saham, sektor, atau istilah</span>
+          <span class="hd-search-txt" aria-hidden="true" style="margin-left: auto; display: grid; place-items: center; min-width: 22px; height: 22px; border-radius: 6px; border: 1px solid #333; font-size: 11px">/</span>
+        </button>
+        <a class="hd-btn hd-login" href="#mulai" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; border: 1px solid #262626; color: #f5f5f5; font-size: 14px; font-weight: 500; text-decoration: none">Masuk</a>
+        <a class="hd-btn" href="#mulai" style="display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 14px; font-weight: 500; text-decoration: none">Coba gratis</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero115: cincin + ikon + judul tengah + gambar produk -->
+  <section id="top" style="position: relative; padding: clamp(56px, 8vw, 88px) 0 clamp(64px, 9vw, 96px)">
+    <!-- Latar yang dipakai landing sekarang: mercusuar dengan sorot cahaya hijau -->
+    <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: -72px; bottom: 0; z-index: 0; pointer-events: none; overflow: hidden">
+      <div style="position: absolute; left: 3vw; top: 40px; width: clamp(260px, 32vw, 560px); aspect-ratio: 2 / 3">
+        <img fetchpriority="high" src="assets/lighthouse.webp" alt="" style="display: block; width: 100%; height: 100%; object-fit: contain; opacity: .3">
+        <div style="position: absolute; left: 50%; top: 14%; width: min(70vw, 980px); height: 760px; transform: translateY(-50%); -webkit-mask-image: radial-gradient(farthest-side at 0% 50%, #000 35%, transparent 100%); mask-image: radial-gradient(farthest-side at 0% 50%, #000 35%, transparent 100%); background: conic-gradient(from 72deg at 0% 50%, transparent 0deg, rgba(74,222,128,.24) 9deg, rgba(74,222,128,.48) 18deg, rgba(74,222,128,.24) 27deg, transparent 36deg);"></div>
+        <div style="position: absolute; left: 50%; top: 14%; width: 20%; height: 9%; transform: translate(-50%, -50%); border-radius: 999px; background: radial-gradient(ellipse, rgba(74,222,128,.68), transparent 70%)"></div>
+      </div>
+      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 45%, #0a0a0a 85%)"></div>
+    </div>
+    <div style="position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px); display: flex; flex-direction: column; gap: 20px">
+      <div style="position: relative; isolation: isolate; display: flex; flex-direction: column; gap: 14px">
+        <h1 style="margin: 0 auto; max-width: 720px; text-align: center; font-size: clamp(32px, 3.8vw, 48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.025em">Pahami saham sebelum ikut beli</h1>
+        <p style="margin: 0 auto; max-width: 620px; text-align: center; color: #a3a3a3; font-size: 17px">CekSaham menjelaskan kondisi, harga, dan risiko satu saham dalam bahasa sehari-hari, langsung dari data BEI.</p>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 8px 0 28px">
+          <a href="#mulai" style="display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 24px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 500; text-decoration: none">Coba gratis 7 hari<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <span style="color: #a3a3a3; font-size: 14px">Pro gratis 7 hari · tanpa kartu kredit</span>
+        </div>
+      </div>
+      <video preload="metadata" id="hero-video" src="assets/ceksaham-demo.mp4" poster="assets/poster.webp" autoplay muted loop playsinline preload="auto" aria-label="Video pengenalan CekSaham: detail saham BBCA, AI Portofolio, AI Watchlist, dan AI Comparison" style="display: block; margin: 0 auto; width: 100%; max-width: 860px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid #2a2a2a; background: #0a0a0a; box-shadow: 0 0 0 1px rgba(78,213,137,.08), 0 30px 80px -20px rgba(0,0,0,.95), 0 60px 160px -40px rgba(78,213,137,.28)"></video>
+    </div>
+  </section>
+
+  <!-- Logos18: saham yang bisa dicek -->
+  <section aria-labelledby="logo-judul" style="padding: 32px 0 clamp(56px, 9vw, 96px)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px); display: flex; flex-direction: column; align-items: center; gap: 28px; text-align: center">
+      <p id="logo-judul" style="margin: 0; color: #a3a3a3; font-size: 14px">Cek saham apa saja di BEI, misalnya</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 40px">
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/bbca.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">BBCA</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/bbri.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">BBRI</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/bmri.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">BMRI</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/tlkm.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">TLKM</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/asii.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">ASII</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/unvr.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">UNVR</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/goto.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">GOTO</span>
+        <span style="display: inline-flex; align-items: center; gap: 10px; color: #d4d4d4; font-size: 15px; font-weight: 500"><img loading="lazy" decoding="async" src="assets/icbp.webp" alt="" style="width: 28px; height: 28px; border-radius: 6px; background: #ffffff; object-fit: contain">ICBP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitur: bento grid (gaya Linear/Vercel), judul di atas, visual besar menempel ke tepi kartu -->
+  <section id="fitur" style="padding: clamp(72px, 10vw, 104px) 0; border-top: 1px solid #1f1f1f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="max-width: 720px; margin: 0 auto 56px; text-align: center">
+        <p style="margin: 0 0 12px; color: #4ed589; font-size: 14px; font-weight: 600">Fitur CekSaham</p>
+        <h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em">Semua yang perlu kamu tahu sebelum beli</h2>
+        <p style="margin: 16px auto 0; max-width: 560px; color: #a3a3a3; font-size: 17px">Dari satu saham sampai seluruh portofolio, dijelaskan dengan bahasa sehari-hari.</p>
+      </div>
+
+      <div class="fx-grid">
+
+        <!-- 1. Besar: skor + radar (2 kolom) -->
+        <div id="f-detail" class="fx-wide" style="position: relative; min-height: 360px; display: flex; flex-wrap: wrap; align-items: stretch; border-radius: 20px; border: 1px solid #262626; background: radial-gradient(90% 120% at 100% 0%, rgba(78,213,137,.16), transparent 55%), #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="flex: 1 1 260px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+            <div>
+              <span style="display: inline-flex; padding: 4px 10px; border-radius: 999px; background: rgba(78,213,137,.1); color: #7ee3aa; font-size: 12px; font-weight: 600">Detail saham</span>
+              <h3 style="margin: 14px 0 0; font-size: 24px; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25">Skor kesehatan dan lima aspek, sekali lihat</h3>
+              <p style="margin: 10px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Skor 0–100 dari laporan keuangan, plus radar kesehatan, dividen, keuangan, aliran dana, dan masa lalu, lengkap dengan alasannya.</p>
+            </div>
+            <a href="#contoh" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; color: #4ed589; font-size: 14px; font-weight: 600; text-decoration: none">Lihat contoh BBCA<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          </div>
+          <div class="fx-vis" aria-hidden="true" style="flex: 1 1 300px; display: flex; align-items: center; justify-content: center; gap: 22px; padding: 24px">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+              <svg class="fx-radar" width="190" height="180" viewBox="6 2 108 102" style="overflow: visible">
+                <circle cx="60" cy="52" r="33" fill="#161616"></circle>
+                <circle cx="60" cy="52" r="30" fill="none" stroke="#2c2c2c" stroke-width="1.6"></circle><circle cx="60" cy="52" r="20" fill="none" stroke="#2c2c2c" stroke-width="1.6"></circle><circle cx="60" cy="52" r="10" fill="none" stroke="#2c2c2c" stroke-width="1.6"></circle>
+                <line x1="60" y1="52" x2="60" y2="22" stroke="#2c2c2c"></line><line x1="60" y1="52" x2="88.5" y2="42.7" stroke="#2c2c2c"></line><line x1="60" y1="52" x2="77.6" y2="76.3" stroke="#2c2c2c"></line><line x1="60" y1="52" x2="42.4" y2="76.3" stroke="#2c2c2c"></line><line x1="60" y1="52" x2="31.5" y2="42.7" stroke="#2c2c2c"></line>
+                <path d="M 60.0 26.0 C 68.7 25.7 85.6 34.4 88.5 42.7 C 91.5 51.1 82.9 74.1 77.6 76.3 C 72.4 78.5 64.0 61.4 57.1 56.0 C 50.2 50.7 35.7 49.3 36.2 44.3 C 36.7 39.3 51.3 26.3 60.0 26.0 Z" fill="rgba(78,213,137,.30)" stroke="#4ed589" stroke-width="1.4"></path>
+                <circle cx="60" cy="26" r="3" fill="#4ed589" stroke="#111" stroke-width="1.2"></circle><circle cx="88.5" cy="42.7" r="3" fill="#4ed589" stroke="#111" stroke-width="1.2"></circle><circle cx="77.6" cy="76.3" r="3" fill="#4ed589" stroke="#111" stroke-width="1.2"></circle><circle cx="57.1" cy="56" r="3" fill="#fb7185" stroke="#111" stroke-width="1.2"></circle><circle cx="36.2" cy="44.3" r="3" fill="#4ed589" stroke="#111" stroke-width="1.2"></circle>
+                <path id="fr-a0" d="M 21.59 45.23 A 39 39 0 0 1 98.41 45.23" fill="none"></path><path id="fr-a1" d="M 54.57 13.38 A 39 39 0 0 1 78.31 86.43" fill="none"></path><path id="fr-a2" d="M 29.09 84.01 A 44.5 44.5 0 0 0 100.00 32.49" fill="none"></path><path id="fr-a3" d="M 20.00 32.49 A 44.5 44.5 0 0 0 90.91 84.01" fill="none"></path><path id="fr-a4" d="M 41.69 86.43 A 39 39 0 0 1 65.43 13.38" fill="none"></path>
+                <text font-size="6.4" font-weight="700" letter-spacing="0.5" fill="#a3a3a3"><textPath href="#fr-a0" startOffset="50%" text-anchor="middle">KESEHATAN</textPath></text>
+                <text font-size="6.4" font-weight="700" letter-spacing="0.5" fill="#a3a3a3"><textPath href="#fr-a1" startOffset="50%" text-anchor="middle">DIVIDEN</textPath></text>
+                <text font-size="6.4" font-weight="700" letter-spacing="0.5" fill="#a3a3a3"><textPath href="#fr-a2" startOffset="50%" text-anchor="middle">KEUANGAN</textPath></text>
+                <text font-size="6.4" font-weight="700" letter-spacing="0.5" fill="#a3a3a3"><textPath href="#fr-a3" startOffset="50%" text-anchor="middle">ALIRAN DANA</textPath></text>
+                <text font-size="6.4" font-weight="700" letter-spacing="0.5" fill="#a3a3a3"><textPath href="#fr-a4" startOffset="50%" text-anchor="middle">MASA LALU</textPath></text>
+              </svg>
+              <b style="font-size: 15px; color: #4ed589">Kuat di 4 dari 5</b>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 10px">
+              <span class="fx-ring" style="position: relative; width: 120px; height: 120px; display: grid; place-items: center"><svg viewBox="0 0 84 84" style="position: absolute; inset: 0; width: 100%; height: 100%"><circle cx="42" cy="42" r="34" fill="none" stroke="#262626" stroke-width="8"></circle><circle cx="42" cy="42" r="34" fill="none" stroke="#4ed589" stroke-width="8" stroke-linecap="round" stroke-dasharray="185.9 213.6" transform="rotate(-90 42 42)"></circle></svg><b style="position: relative; font-size: 32px">87</b></span>
+              <b style="font-size: 15px; color: #4ed589">Sangat kuat</b>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Bahasa sehari-hari -->
+        <div class="sw-wrap"><div class="fx-sub" id="sw-fitur">
+        <div style="min-height: 360px; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="padding: 28px 28px 0">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 600">Bahasa sehari-hari</h3>
+            <p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Istilah seperti PER diubah jadi kalimat yang langsung dipahami.</p>
+          </div>
+          <div aria-hidden="true" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 24px; background: radial-gradient(80% 70% at 50% 100%, rgba(78,213,137,.12), transparent 70%)">
+            <span style="padding: 6px 14px; border-radius: 10px; background: #1a1a1a; border: 1px solid #2a2a2a; font-size: 17px; font-weight: 600; color: #8a8a8a; text-decoration: line-through; text-decoration-color: rgba(255,255,255,.35)">PER 11,4×</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg>
+            <span style="padding: 12px 18px; border-radius: 14px; background: #161616; border: 1px solid rgba(78,213,137,.4); font-size: 16px; font-weight: 600; text-align: center; line-height: 1.4">Harganya lebih rendah<br>dari biasanya</span>
+          </div>
+        </div>
+
+        <!-- 3. AI Portofolio -->
+        <div id="f-portofolio" style="min-height: 320px; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="padding: 28px 28px 0">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 600">AI Portofolio</h3>
+            <p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Kesehatan portofoliomu, dan bagian yang perlu dibenahi.</p>
+          </div>
+          <div aria-hidden="true" style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; padding: 24px 28px 28px">
+            <div style="display: grid; grid-template-columns: 112px 1fr 34px; align-items: center; gap: 10px; font-size: 13px"><span style="color: #a3a3a3">Kesehatan saham</span><span style="height: 8px; border-radius: 99px; background: #262626; overflow: hidden"><span style="display: block; width: 71%; height: 100%; background: #4ed589"></span></span><b style="text-align: right; color: #4ed589">71</b></div>
+            <div style="display: grid; grid-template-columns: 112px 1fr 34px; align-items: center; gap: 10px; font-size: 13px"><span style="color: #a3a3a3">Ketenangan</span><span style="height: 8px; border-radius: 99px; background: #262626; overflow: hidden"><span style="display: block; width: 100%; height: 100%; background: #4ed589"></span></span><b style="text-align: right; color: #4ed589">100</b></div>
+            <div style="display: grid; grid-template-columns: 112px 1fr 34px; align-items: center; gap: 10px; font-size: 13px; padding: 8px 10px; margin: 0 -10px; border-radius: 10px; background: rgba(251,113,133,.06); border: 1px solid rgba(251,113,133,.25)"><span style="color: #f5f5f5; font-weight: 600">Sebaran</span><span style="height: 8px; border-radius: 99px; background: #262626; overflow: hidden"><span style="display: block; width: 25%; height: 100%; background: #fb7185"></span></span><b style="text-align: right; color: #fb7185">25</b></div>
+          </div>
+        </div>
+
+        <!-- 4. AI Screener -->
+        <div id="f-screener" style="min-height: 320px; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="padding: 28px 28px 0">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 600">AI Screener</h3>
+            <p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Cari saham dengan bahasa biasa, tanpa rumus.</p>
+          </div>
+          <div aria-hidden="true" style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; padding: 24px 28px 28px">
+            <span style="display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 16px; border-radius: 999px; background: #161616; border: 1px solid rgba(78,213,137,.4); font-size: 15px; box-shadow: 0 0 0 5px rgba(78,213,137,.07)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>dividen rutin, utang kecil<span style="width: 2px; height: 18px; background: #4ed589"></span></span>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; padding-left: 6px">
+              <span style="padding: 4px 10px; border-radius: 999px; background: #1a1a1a; border: 1px solid #2a2a2a; font-size: 12px; color: #c4c4c4">Dividen tiap tahun</span>
+              <span style="padding: 4px 10px; border-radius: 999px; background: #1a1a1a; border: 1px solid #2a2a2a; font-size: 12px; color: #c4c4c4">Utang rendah</span>
+              <span style="padding: 4px 10px; border-radius: 999px; background: #1a1a1a; border: 1px solid #2a2a2a; font-size: 12px; color: #c4c4c4">Skor sehat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. AI Comparison -->
+        <div id="f-comparison" style="min-height: 320px; display: flex; flex-direction: column; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="padding: 28px 28px 0">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 600">AI Comparison</h3>
+            <p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Dua saham berdampingan, dengan penjelasan "artinya".</p>
+          </div>
+          <div aria-hidden="true" style="flex: 1; display: flex; align-items: flex-end; justify-content: center; gap: 12px; padding: 24px 28px 28px">
+            <span style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 10px; border-radius: 14px; background: #161616; border: 1px solid rgba(78,213,137,.35)"><img loading="lazy" decoding="async" src="assets/bbca.webp" alt="" style="width: 34px; height: 34px; border-radius: 8px; background: #fff; object-fit: contain"><b style="font-size: 13px">BBCA</b><b style="font-size: 26px; color: #4ed589">87</b></span>
+            <span style="align-self: center; font-size: 12px; font-weight: 700; color: #737373">vs</span>
+            <span style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 10px; border-radius: 14px; background: #161616; border: 1px solid #2a2a2a"><img loading="lazy" decoding="async" src="assets/bmri.webp" alt="" style="width: 34px; height: 34px; border-radius: 8px; background: #fff; object-fit: contain"><b style="font-size: 13px">BMRI</b><b style="font-size: 26px">68</b></span>
+          </div>
+        </div>
+
+        <!-- 6. AI Watchlist (2 kolom) -->
+        </div><button class="sw-btn sw-prev" type="button" aria-label="Fitur sebelumnya" data-on="click:fxPrev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button><button class="sw-btn sw-next" type="button" aria-label="Fitur berikutnya" data-on="click:fxNext"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+        <div id="f-watchlist" class="fx-wide" style="min-height: 260px; display: flex; flex-wrap: wrap; align-items: stretch; border-radius: 20px; border: 1px solid #262626; background: radial-gradient(90% 140% at 0% 100%, rgba(78,213,137,.12), transparent 55%), #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); overflow: hidden">
+          <div style="flex: 1 1 240px; padding: 32px">
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">AI Watchlist</h3>
+            <p style="margin: 10px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.6">Saham yang kamu pantau dicek tiap hari. Kamu dikabari kalau ada perubahan penting.</p>
+          </div>
+          <div aria-hidden="true" style="flex: 1 1 320px; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 24px 32px">
+            <span style="display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: #161616; border: 1px solid rgba(78,213,137,.35); box-shadow: 0 18px 40px -18px rgba(0,0,0,.9)">
+              <span style="flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: rgba(78,213,137,.14)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg></span>
+              <span style="display: flex; flex-direction: column; line-height: 1.4"><b style="font-size: 15px"><span style="color: #fbbf24">1 dari 4 saham</span> perlu perhatian</b><span style="font-size: 13px; color: #a3a3a3">Ada 3 perubahan sejak kemarin</span></span>
+            </span>
+            <span style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: #131313; border: 1px solid #242424; opacity: .7; margin: 0 14px">
+              <img loading="lazy" decoding="async" src="assets/bbca.webp" alt="" style="width: 26px; height: 26px; border-radius: 6px; background: #fff; object-fit: contain"><b style="font-size: 13px">BBCA</b><span style="font-size: 13px; color: #4ed589">87/100 · Sehat</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 7. Ajakan -->
+        <div class="fx-cta" style="min-height: 260px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; padding: 32px; border-radius: 20px; border: 1px solid rgba(78,213,137,.4); background: linear-gradient(160deg, rgba(78,213,137,.18), #0f0f0f 65%); box-shadow: inset 0 1px 0 rgba(255,255,255,.08)">
+          <div>
+            <h3 style="margin: 0; font-size: 22px; font-weight: 600">Coba semuanya gratis</h3>
+            <p style="margin: 10px 0 0; color: #c4c4c4; font-size: 15px; line-height: 1.6">Pro 7 hari, tanpa kartu kredit. Setelah itu kembali ke Gratis tanpa tagihan.</p>
+          </div>
+          <a href="#mulai" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 600; text-decoration: none">Coba gratis 7 hari<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kenali fitur: HP berganti otomatis seperti landing sekarang. Desktop: penjelasan kiri, HP kanan. HP: penjelasan di bawah HP -->
+  <section id="contoh" aria-label="Kenali fitur CekSaham" aria-roledescription="carousel" style="background: #111111; border-top: 1px solid #1f1f1f; border-bottom: 1px solid #1f1f1f">
+    <div class="car-row" style="max-width: 1240px; margin: 0 auto; padding: clamp(64px, 9vw, 96px) clamp(24px, 6vw, 88px); display: flex; flex-wrap: wrap-reverse; align-items: center; justify-content: center; gap: 48px 72px" data-on="pointerenter:hold pointerleave:release">
+
+      <div class="car-txt" style="flex: 1 1 380px; min-width: 0; max-width: 520px">
+        <p style="margin: 0 0 12px; color: #4ed589; font-size: 14px; font-weight: 600">Kenali CekSaham</p>
+        <div aria-live="polite" style="min-height: 120px">
+          <h2 style="margin: 0; font-size: clamp(30px, 3.4vw, 40px); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em"><span data-text="title"></span></h2>
+          <p style="margin: 14px 0 0; color: #a3a3a3; font-size: 17px; line-height: 1.6"><span data-text="desc"></span></p>
+        </div>
+      </div>
+
+      <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 18px">
+        <div style="position: relative; width: 290px; height: 645px; border-radius: 47px; padding: 2px; box-sizing: border-box; background: linear-gradient(160deg, #3a3a3d, #1d1d1f 45%, #2a2a2c); box-shadow: 0 40px 80px -28px rgba(0,0,0,.9), 0 60px 140px -50px rgba(78,213,137,.25)">
+          <div style="width: 100%; height: 100%; border-radius: 45px; background: #000000; padding: 11px; box-sizing: border-box">
+            <div style="position: relative; display: flex; flex-direction: column; width: 100%; height: 100%; border-radius: 36px; background: #0b0b0c; overflow: hidden">
+              <div aria-hidden="true" style="position: relative; flex: none; height: 33px; display: flex; align-items: center; justify-content: space-between; padding: 2px 24px 0; font-size: 11.5px; font-weight: 600; color: #ffffff">
+                <span>9:41</span>
+                <span style="position: absolute; left: 50%; top: 7px; width: 80px; height: 22px; margin-left: -40px; border-radius: 999px; background: #000000"></span>
+                <span style="display: flex; align-items: center; gap: 5px"><span style="display: flex; align-items: flex-end; gap: 1.5px"><span style="width: 3px; height: 4px; border-radius: 1px; background: #fff"></span><span style="width: 3px; height: 5.5px; border-radius: 1px; background: #fff"></span><span style="width: 3px; height: 7px; border-radius: 1px; background: #fff"></span><span style="width: 3px; height: 9px; border-radius: 1px; background: #fff"></span></span><span style="position: relative; width: 20px; height: 10px; border-radius: 3px; border: 1px solid rgba(255,255,255,.8)"><span style="position: absolute; inset: 1px 4px 1px 1px; border-radius: 1.5px; background: #fff"></span></span></span>
+              </div>
+              <div style="position: relative; flex: 1; min-height: 0">
+                
+                  <img loading="lazy" decoding="async" src="{{ slides.0.src }}" alt="{{ slides.0.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.0.op }}; transform: translateX({{ slides.0.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)" data-bind='{"src": "{{ slides.0.src }}", "alt": "{{ slides.0.alt }}", "style": "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.0.op }}; transform: translateX({{ slides.0.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)"}'>
+                
+                  <img loading="lazy" decoding="async" src="{{ slides.1.src }}" alt="{{ slides.1.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.1.op }}; transform: translateX({{ slides.1.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)" data-bind='{"src": "{{ slides.1.src }}", "alt": "{{ slides.1.alt }}", "style": "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.1.op }}; transform: translateX({{ slides.1.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)"}'>
+                
+                  <img loading="lazy" decoding="async" src="{{ slides.2.src }}" alt="{{ slides.2.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.2.op }}; transform: translateX({{ slides.2.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)" data-bind='{"src": "{{ slides.2.src }}", "alt": "{{ slides.2.alt }}", "style": "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.2.op }}; transform: translateX({{ slides.2.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)"}'>
+                
+                  <img loading="lazy" decoding="async" src="{{ slides.3.src }}" alt="{{ slides.3.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.3.op }}; transform: translateX({{ slides.3.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)" data-bind='{"src": "{{ slides.3.src }}", "alt": "{{ slides.3.alt }}", "style": "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.3.op }}; transform: translateX({{ slides.3.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)"}'>
+                
+                  <img loading="lazy" decoding="async" src="{{ slides.4.src }}" alt="{{ slides.4.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.4.op }}; transform: translateX({{ slides.4.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)" data-bind='{"src": "{{ slides.4.src }}", "alt": "{{ slides.4.alt }}", "style": "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: {{ slides.4.op }}; transform: translateX({{ slides.4.x }}px); transition: opacity .45s cubic-bezier(.22,1,.36,1), transform .45s cubic-bezier(.22,1,.36,1)"}'>
+                
+              </div>
+              <span aria-hidden="true" style="position: absolute; left: 50%; bottom: 6px; width: 90px; height: 3.5px; margin-left: -45px; border-radius: 999px; background: rgba(255,255,255,.75)"></span>
+            </div>
+          </div>
+        </div>
+        <div role="tablist" aria-label="Pilih fitur" style="display: flex; gap: 0">
+          
+            <button type="button" role="tab" aria-selected="{{ slides.0.on }}" aria-label="{{ slides.0.name }}" style="display: grid; place-items: center; height: 28px; padding: 0 3px; border: 0; background: transparent; cursor: pointer" data-on="click:slides.0.go" data-bind='{"aria-selected": "{{ slides.0.on }}", "aria-label": "{{ slides.0.name }}"}'><span style="display: block; height: 8px; width: {{ slides.0.dotW }}px; border-radius: 999px; background: {{ slides.0.dotBg }}; transition: width .3s, background-color .3s" data-bind='{"style": "display: block; height: 8px; width: {{ slides.0.dotW }}px; border-radius: 999px; background: {{ slides.0.dotBg }}; transition: width .3s, background-color .3s"}'></span></button>
+          
+            <button type="button" role="tab" aria-selected="{{ slides.1.on }}" aria-label="{{ slides.1.name }}" style="display: grid; place-items: center; height: 28px; padding: 0 3px; border: 0; background: transparent; cursor: pointer" data-on="click:slides.1.go" data-bind='{"aria-selected": "{{ slides.1.on }}", "aria-label": "{{ slides.1.name }}"}'><span style="display: block; height: 8px; width: {{ slides.1.dotW }}px; border-radius: 999px; background: {{ slides.1.dotBg }}; transition: width .3s, background-color .3s" data-bind='{"style": "display: block; height: 8px; width: {{ slides.1.dotW }}px; border-radius: 999px; background: {{ slides.1.dotBg }}; transition: width .3s, background-color .3s"}'></span></button>
+          
+            <button type="button" role="tab" aria-selected="{{ slides.2.on }}" aria-label="{{ slides.2.name }}" style="display: grid; place-items: center; height: 28px; padding: 0 3px; border: 0; background: transparent; cursor: pointer" data-on="click:slides.2.go" data-bind='{"aria-selected": "{{ slides.2.on }}", "aria-label": "{{ slides.2.name }}"}'><span style="display: block; height: 8px; width: {{ slides.2.dotW }}px; border-radius: 999px; background: {{ slides.2.dotBg }}; transition: width .3s, background-color .3s" data-bind='{"style": "display: block; height: 8px; width: {{ slides.2.dotW }}px; border-radius: 999px; background: {{ slides.2.dotBg }}; transition: width .3s, background-color .3s"}'></span></button>
+          
+            <button type="button" role="tab" aria-selected="{{ slides.3.on }}" aria-label="{{ slides.3.name }}" style="display: grid; place-items: center; height: 28px; padding: 0 3px; border: 0; background: transparent; cursor: pointer" data-on="click:slides.3.go" data-bind='{"aria-selected": "{{ slides.3.on }}", "aria-label": "{{ slides.3.name }}"}'><span style="display: block; height: 8px; width: {{ slides.3.dotW }}px; border-radius: 999px; background: {{ slides.3.dotBg }}; transition: width .3s, background-color .3s" data-bind='{"style": "display: block; height: 8px; width: {{ slides.3.dotW }}px; border-radius: 999px; background: {{ slides.3.dotBg }}; transition: width .3s, background-color .3s"}'></span></button>
+          
+            <button type="button" role="tab" aria-selected="{{ slides.4.on }}" aria-label="{{ slides.4.name }}" style="display: grid; place-items: center; height: 28px; padding: 0 3px; border: 0; background: transparent; cursor: pointer" data-on="click:slides.4.go" data-bind='{"aria-selected": "{{ slides.4.on }}", "aria-label": "{{ slides.4.name }}"}'><span style="display: block; height: 8px; width: {{ slides.4.dotW }}px; border-radius: 999px; background: {{ slides.4.dotBg }}; transition: width .3s, background-color .3s" data-bind='{"style": "display: block; height: 8px; width: {{ slides.4.dotW }}px; border-radius: 999px; background: {{ slides.4.dotBg }}; transition: width .3s, background-color .3s"}'></span></button>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang: apa itu CekSaham dan siapa di baliknya (isi sama dengan landing sekarang) -->
+  <section id="tentang" style="padding: clamp(72px, 10vw, 112px) 0; border-top: 1px solid #1f1f1f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px 72px">
+        <div style="flex: 1 1 420px; min-width: 0">
+          <p style="margin: 0 0 12px; color: #4ed589; font-size: 14px; font-weight: 600">Tentang kami</p>
+          <h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em">Apa itu CekSaham.AI?</h2>
+          <p style="margin: 16px 0 0; max-width: 520px; color: #a3a3a3; font-size: 17px; line-height: 1.6">Platform edukasi dan alat riset saham tersimpel. Kami membantu kamu memahami kondisi saham dengan bahasa sehari-hari, supaya keputusanmu tidak hanya ikut kata orang.</p>
+        </div>
+        <ul style="flex: 1 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+          <li style="display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 16px; border: 1px solid rgba(78,213,137,.35); background: rgba(78,213,137,.06)">
+            <span style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #4ed589"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#04130a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+            <span><b style="display: block; font-size: 16px">Platform edukasi dan riset saham</b><span style="font-size: 14px; color: #a3a3a3">Data dari BEI, dijelaskan dengan bahasa sehari-hari.</span></span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f">
+            <span style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #1c1c1c; border: 1px solid #2a2a2a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span><b style="display: block; font-size: 16px">Bukan jualan kelas atau sinyal</b><span style="font-size: 14px; color: #a3a3a3">Kami tidak memberi rekomendasi beli, jual, atau tahan.</span></span>
+          </li>
+          <li style="display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 16px; border: 1px solid #262626; background: #0f0f0f">
+            <span style="flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #1c1c1c; border: 1px solid #2a2a2a"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></span>
+            <span><b style="display: block; font-size: 16px">Bukan platform transaksi</b><span style="font-size: 14px; color: #a3a3a3">Jual-beli saham tetap di sekuritasmu.</span></span>
+          </li>
+        </ul>
+      </div>
+
+      <div id="tim" style="margin-top: 88px">
+        <div style="max-width: 640px; margin: 0 auto 40px; text-align: center">
+          <h3 style="margin: 0; font-size: clamp(26px, 2.8vw, 34px); font-weight: 600; letter-spacing: -0.02em">Siapa di balik CekSaham.AI?</h3>
+          <p style="margin: 12px 0 0; color: #a3a3a3; font-size: 16px">Bukan hanya sebuah tim, tapi keluarga yang membuat sesuatu yang berguna.</p>
+        </div>
+        <div class="sw-wrap"><div class="tm-grid" id="sw-tim">
+          <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.05)">
+            <div class="tm-head" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+              <img loading="lazy" decoding="async" src="assets/hans.webp" alt="Foto Hans Nicholas K." style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover; border: 2px solid rgba(78,213,137,.4)">
+              <span><b style="display: block; font-size: 17px">Hans Nicholas K.</b><span style="display: block; font-size: 14px; font-weight: 600; color: #4ed589">Founder</span><span style="font-size: 13px; color: #a3a3a3">Australia</span></span>
+            </div>
+            <p style="margin: 0; color: #a3a3a3; font-size: 14px; line-height: 1.6">Investor dan pegiat AI. Membangun CekSaham supaya data saham yang rumit bisa dipahami dengan bahasa yang gampang.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.05)">
+            <div class="tm-head" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+              <img loading="lazy" decoding="async" src="assets/indra.webp" alt="Foto Indra Jasa Suhastra" style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover; border: 2px solid rgba(78,213,137,.4)">
+              <span><b style="display: block; font-size: 17px">Indra Jasa Suhastra</b><span style="display: block; font-size: 14px; font-weight: 600; color: #4ed589">Data &amp; Engineering</span><span style="font-size: 13px; color: #a3a3a3">Indonesia</span></span>
+            </div>
+            <p style="margin: 0; color: #a3a3a3; font-size: 14px; line-height: 1.6">Membangun mesin data CekSaham: mengolah laporan keuangan dan data perdagangan tiap hari bursa supaya angkanya akurat.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 16px; padding: 28px; border-radius: 20px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.05)">
+            <div class="tm-head" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+              <img loading="lazy" decoding="async" src="assets/ted.webp" alt="Foto Ted Damian N." style="width: 72px; height: 72px; border-radius: 999px; object-fit: cover; border: 2px solid rgba(78,213,137,.4)">
+              <span><b style="display: block; font-size: 17px">Ted Damian N.</b><span style="display: block; font-size: 14px; font-weight: 600; color: #4ed589">Brand &amp; Growth</span><span style="font-size: 13px; color: #a3a3a3">China</span></span>
+            </div>
+            <p style="margin: 0; color: #a3a3a3; font-size: 14px; line-height: 1.6">Pernah menempuh pendidikan di London School of Economics. Menjaga cara CekSaham bicara, dari konten edukasi sampai tampilan, supaya jelas dan tidak bikin pusing.</p>
+          </div>
+        </div><button class="sw-btn sw-prev" type="button" aria-label="Anggota tim sebelumnya" data-on="click:tmPrev"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button><button class="sw-btn sw-next" type="button" aria-label="Anggota tim berikutnya" data-on="click:tmNext"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Harga: per 3 bulan sebagai bawaan (Rp59.000 dicoret), bisa pindah ke bulanan -->
+  <section id="harga" style="padding: clamp(72px, 10vw, 112px) 0; border-top: 1px solid #1f1f1f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="max-width: 720px; margin: 0 auto; text-align: center">
+        <p style="margin: 0 0 12px; color: #4ed589; font-size: 14px; font-weight: 600">Harga</p>
+        <h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 600; line-height: 1.15; letter-spacing: -0.025em">Mulai dari Pro gratis 7 hari</h2>
+        <p style="margin: 16px auto 0; max-width: 520px; color: #a3a3a3; font-size: 17px">Tanpa kartu kredit. Setelah 7 hari, akunmu kembali ke Gratis tanpa tagihan.</p>
+      </div>
+
+      <div style="height: 44px"></div>
+
+      <div style="max-width: 920px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; align-items: stretch">
+        <div style="display: flex; flex-direction: column; gap: 22px; padding: 32px; border-radius: 22px; border: 1px solid #262626; background: #0f0f0f; box-shadow: inset 0 1px 0 rgba(255,255,255,.05)">
+          <div class="pr-head" style="min-height: 72px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px">
+            <div><h3 style="margin: 0; font-size: 18px; font-weight: 600">Gratis</h3><p style="margin: 6px 0 0; color: #a3a3a3; font-size: 14px">Untuk mulai mengenal saham.</p></div>
+          </div>
+          <div class="pr-price" style="min-height: 92px">
+            <div style="display: flex; align-items: baseline; gap: 10px"><span style="font-size: clamp(38px, 9vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1">Rp0</span><span style="color: #a3a3a3; font-size: 16px">/selamanya</span></div>
+            <p style="margin: 10px 0 0; font-size: 14px; color: #a3a3a3">Tanpa kartu kredit, tanpa batas waktu.</p>
+          </div>
+          <a href="#mulai" style="display: inline-flex; align-items: center; justify-content: center; height: 48px; border-radius: 10px; border: 1px solid #333; color: #f5f5f5; font-size: 15px; font-weight: 600; text-decoration: none">Daftar gratis</a>
+          <ul style="margin: 0; padding: 20px 0 0; border-top: 1px solid #222; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px"><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #c4c4c4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Ringkasan kondisi saham</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #c4c4c4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Skor kesehatan</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #c4c4c4"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Berita pasar</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #6b6b6b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex: none"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Tidak termasuk: </span>Bedah saham lengkap, 10 bagian</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #6b6b6b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex: none"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Tidak termasuk: </span>Briefing dan AI Watchlist</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #6b6b6b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex: none"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Tidak termasuk: </span>AI Comparison dan AI Screener</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #6b6b6b"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="2.2" stroke-linecap="round" aria-hidden="true" style="flex: none"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Tidak termasuk: </span>AI Portofolio</li></ul>
+        </div>
+
+        <div style="position: relative; display: flex; flex-direction: column; gap: 22px; padding: 32px; border-radius: 22px; border: 1.5px solid #4ed589; background: radial-gradient(120% 70% at 100% 0%, rgba(78,213,137,.18), transparent 60%), #0f0f0f; box-shadow: 0 30px 80px -36px rgba(78,213,137,.45), inset 0 1px 0 rgba(255,255,255,.07)">
+          <span style="position: absolute; top: -14px; left: 32px; padding: 5px 14px; border-radius: 999px; background: #4ed589; color: #06140c; font-size: 12px; font-weight: 700; letter-spacing: .02em">Disarankan · 7 hari gratis</span>
+          <div class="pr-head" style="min-height: 72px; display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px">
+            <div style="flex: 1 1 140px"><h3 style="margin: 0; font-size: 18px; font-weight: 600">Pro</h3><p style="margin: 6px 0 0; color: #a3a3a3; font-size: 14px">Semua fitur CekSaham.</p></div>
+            <div role="radiogroup" aria-label="Periode pembayaran" style="flex: none; display: flex; gap: 2px; padding: 3px; border-radius: 999px; background: #161616; border: 1px solid #2a2a2a">
+              <button type="button" role="radio" aria-checked="{{ monthOn }}" style="min-height: 34px; padding: 0 12px; border: 0; border-radius: 999px; background: {{ monthBg }}; color: {{ monthFg }}; font-size: 13px; font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s" data-on="click:pickMonth" data-bind='{"aria-checked": "{{ monthOn }}", "style": "min-height: 34px; padding: 0 12px; border: 0; border-radius: 999px; background: {{ monthBg }}; color: {{ monthFg }}; font-size: 13px; font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s"}'>Bulanan</button>
+              <button type="button" role="radio" aria-checked="{{ threeOn }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 8px 0 12px; border: 0; border-radius: 999px; background: {{ threeBg }}; color: {{ threeFg }}; font-size: 13px; font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s" data-on="click:pickThree" data-bind='{"aria-checked": "{{ threeOn }}", "style": "display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 8px 0 12px; border: 0; border-radius: 999px; background: {{ threeBg }}; color: {{ threeFg }}; font-size: 13px; font-weight: 600; cursor: pointer; transition: background-color .2s, color .2s"}'>3 bulan<span style="padding: 2px 7px; border-radius: 999px; background: {{ saveBg }}; color: {{ saveFg }}; font-size: 11px; font-weight: 700" data-bind='{"style": "padding: 2px 7px; border-radius: 999px; background: {{ saveBg }}; color: {{ saveFg }}; font-size: 11px; font-weight: 700"}'>−15%</span></button>
+            </div>
+          </div>
+          <div class="pr-price" style="min-height: 92px">
+            <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px">
+              <span data-if="three"><span style="font-size: 20px; font-weight: 600; color: #737373; text-decoration: line-through; text-decoration-color: #fb7185; text-decoration-thickness: 2px">Rp59.000</span></span>
+              <span style="white-space: nowrap"><span style="font-size: clamp(38px, 9vw, 44px); font-weight: 600; letter-spacing: -0.03em; line-height: 1"><span data-text="price"></span></span><span style="margin-left: 8px; color: #a3a3a3; font-size: 16px">/bulan</span></span>
+            </div>
+            <p style="margin: 10px 0 0; font-size: 14px; color: {{ noteColor }}" data-bind='{"style": "margin: 10px 0 0; font-size: 14px; color: {{ noteColor }}"}'><span data-text="priceNote"></span></p>
+          </div>
+          <a href="#mulai" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 10px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 700; text-decoration: none">Coba Pro gratis 7 hari<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+          <ul style="margin: 0; padding: 20px 0 0; border-top: 1px solid rgba(78,213,137,.18); list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px"><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Ringkasan kondisi saham</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Skor kesehatan</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Berita pasar</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Bedah saham lengkap, 10 bagian</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>Briefing dan AI Watchlist</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>AI Comparison dan AI Screener</li><li style="display: flex; align-items: center; gap: 10px; min-height: 28px; color: #f5f5f5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ed589" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none"><path d="M20 6 9 17l-5-5"></path></svg>AI Portofolio</li></ul>
+        </div>
+      </div>
+      <p style="margin: 24px 0 0; text-align: center; color: #a3a3a3; font-size: 13px">Harga dalam Rupiah. Bisa berhenti kapan saja.</p>
+    </div>
+  </section>
+
+  <!-- Cta10: pita aksen -->
+  <section id="mulai" style="padding: 32px 0 clamp(72px, 10vw, 112px)">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px 64px; padding: clamp(28px, 6vw, 48px); border-radius: 12px; background: #171717">
+        <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 36px); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em">Saham apa yang lagi kamu pegang?</h2>
+          <p style="margin: 0; max-width: 560px; color: #a3a3a3; font-size: 18px">Cek kondisinya sekarang. Pro gratis 7 hari, tanpa kartu kredit.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <a href="#contoh" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 8px; border: 1px solid #333333; background: #0a0a0a; color: #f5f5f5; font-size: 15px; font-weight: 500; text-decoration: none">Lihat contoh BBCA</a>
+          <a href="#mulai" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 8px; background: #4ed589; color: #06140c; font-size: 15px; font-weight: 500; text-decoration: none">Coba gratis 7 hari</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer2 -->
+  <footer id="faq" style="padding: 64px 0 32px; border-top: 1px solid #1f1f1f">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(24px, 6vw, 88px)">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px">
+        <div style="flex: 1 1 260px; max-width: 320px">
+          <a href="#top" style="display: inline-flex; align-items: center; gap: 4px; text-decoration: none"><img src="assets/icon.webp" alt="" style="height: 20px; width: auto"><img src="assets/logo.webp" alt="CekSaham" style="height: 17px; width: auto"></a>
+          <p style="margin: 16px 0 0; color: #a3a3a3; font-size: 14px">Cek kondisi saham dengan bahasa simpel.</p>
+          <div style="margin-top: 20px; display: flex; gap: 8px"><a href="https://www.instagram.com/ceksaham.ai/" target="_blank" rel="noopener" aria-label="Instagram CekSaham.AI" style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #262626; background: #141414; color: #a3a3a3; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"></circle></svg></a><a href="https://www.tiktok.com/@ceksahamai" target="_blank" rel="noopener" aria-label="TikTok CekSaham.AI" style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #262626; background: #141414; color: #a3a3a3; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1-2.59-2.59 2.59 2.59 0 0 1 3.34-2.48V9.68a5.73 5.73 0 0 0-.75-.05A5.68 5.68 0 0 0 4.18 15.3 5.68 5.68 0 0 0 9.86 21a5.68 5.68 0 0 0 5.68-5.68V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.3 4.3 0 0 1-3.24-1.48z"></path></svg></a><a href="https://www.threads.net/@ceksaham.ai" target="_blank" rel="noopener" aria-label="Threads CekSaham.AI" style="display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; border: 1px solid #262626; background: #141414; color: #a3a3a3; text-decoration: none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7.5C17.7 4.6 15.2 3 12 3 7 3 4 6.6 4 12s3 9 8 9c3.6 0 6.5-2 6.5-5.2 0-2.8-2.2-4.6-5.4-4.6-2.6 0-4.3 1.4-4.3 3.2 0 1.7 1.4 2.8 3.2 2.8 3 0 4.3-2.4 4.3-6.2"></path></svg></a></div>
+        </div>
+        <div style="flex: 1 1 420px; max-width: 560px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+          <div><h3 style="margin: 0 0 16px; font-size: 14px; font-weight: 600">Produk</h3><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px"><li><a href="#fitur" style="color: #a3a3a3; text-decoration: none">Detail saham</a></li><li><a href="#fitur" style="color: #a3a3a3; text-decoration: none">AI Screener</a></li><li><a href="#harga" style="color: #a3a3a3; text-decoration: none">Harga</a></li></ul></div>
+          <div><h3 style="margin: 0 0 16px; font-size: 14px; font-weight: 600">Belajar</h3><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px"><li><a href="#top" style="color: #a3a3a3; text-decoration: none">Apa itu saham</a></li><li><a href="#top" style="color: #a3a3a3; text-decoration: none">Cara CekSaham menilai</a></li></ul></div>
+          <div><h3 style="margin: 0 0 16px; font-size: 14px; font-weight: 600">Tentang</h3><ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 14px"><li><a href="#tim" style="color: #a3a3a3; text-decoration: none">Tim</a></li><li><a href="#top" style="color: #a3a3a3; text-decoration: none">Kontak</a></li></ul></div>
+        </div>
+      </div>
+      <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid #1f1f1f; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; color: #a3a3a3; font-size: 14px">
+        <span>Bukan rekomendasi beli, jual, atau tahan. © 2026 CekSaham.AI</span>
+        <span style="display: flex; gap: 20px"><a href="#top" style="color: #a3a3a3">Ketentuan</a><a href="#top" style="color: #a3a3a3">Privasi</a></span>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+
+class DCLogic{constructor(p){this.props=p||{};this.state={}}setState(u){Object.assign(this.state,u);if(!this._q){this._q=1;requestAnimationFrame(()=>{this._q=0;render()})}}}
+function get(o,p){return p.split('.').reduce((a,k)=>a==null?a:a[k],o)}
+function fill(t,v){return t.replace(/\{\{\s*([\w.]+)\s*\}\}/g,(_,p)=>{const x=get(v,p);return x==null?'':x})}
+let C,V;const B=[...document.querySelectorAll('[data-bind]')].map(e=>[e,JSON.parse(e.dataset.bind)]),T=[...document.querySelectorAll('[data-text]')],I=[...document.querySelectorAll('[data-if]')];
+function render(){V=C.renderVals();for(const[e,b]of B)for(const k in b){const x=fill(b[k],V);if(e.getAttribute(k)!==x)e.setAttribute(k,x)}for(const e of T){const x=String(get(V,e.dataset.text)??'');if(e.textContent!==x)e.textContent=x}for(const e of I)e.hidden=!get(V,e.dataset.if)}
+const EV={click:'click',pointerenter:'pointerenter',pointerleave:'pointerleave',keydown:'keydown'};
+document.querySelectorAll('[data-on]').forEach(e=>e.dataset.on.split(' ').forEach(p=>{const[ev,path]=p.split(':');e.addEventListener(EV[ev]||ev,x=>{const f=get(V,path);if(typeof f==='function')f(x)})}));
+
+var SLIDES = [
+  { src: 'assets/hp-detail-saham.webp', title: 'Kenali saham kamu', desc: 'Skor kesehatan, harga dibanding biasanya, dan risikonya, dalam bahasa yang gampang.', name: 'Detail saham' },
+  { src: 'assets/hp-portofolio.webp', title: 'Cek kesehatan portofoliomu', desc: 'Lihat masalahnya, kenapa terjadi, dan dapat saham yang cocok untuk memperbaikinya.', name: 'AI Portofolio' },
+  { src: 'assets/hp-briefing.webp', title: 'Pahami pasar hari ini', desc: 'Ikuti kabar penting dan dampaknya ke pasar.', name: 'Briefing' },
+  { src: 'assets/hp-comparison.webp', title: 'Bandingkan sebelum memilih', desc: 'Lihat perbedaan dua saham dalam satu tampilan.', name: 'AI Comparison' },
+  { src: 'assets/hp-screener.webp', title: 'Temukan saham sesuai kriteria', desc: 'Saring saham dengan bahasa biasa, tanpa rumus.', name: 'AI Screener' }
+];
+function slide(id, dir) {
+  var row = document.getElementById(id); if (!row || !row.firstElementChild) return;
+  var step = row.firstElementChild.getBoundingClientRect().width + 12;
+  var end = row.scrollLeft + row.clientWidth >= row.scrollWidth - 4;
+  if (dir > 0 && end) row.scrollTo({ left: 0, behavior: 'smooth' });
+  else if (dir < 0 && row.scrollLeft <= 4) row.scrollTo({ left: row.scrollWidth, behavior: 'smooth' });
+  else row.scrollBy({ left: dir * step, behavior: 'smooth' });
+}
+var AUTO_MS = 3500;   // turns by itself every 3.5 s
+var WAIT_MS = 10000;  // after a tap it waits 10 s, then turns by itself again
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { slide: 0, prog: 0, three: true, active: 'top', dd: false };
+    this.waitUntil = 0;
+    this.holding = false;
+  }
+
+  componentDidMount() {
+    var self = this;
+    var v = document.getElementById('hero-video');
+    if (v) { v.muted = true; var pr = v.play && v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // active menu follows the section in view (Kenali CekSaham counts as Fitur)
+    var ids = ['top', 'fitur', 'contoh', 'tentang', 'harga', 'mulai', 'faq'];
+    var as = { contoh: 'fitur', mulai: 'harga' };
+    this.spy = function () {
+      var line = window.scrollY + 120, cur = 'top';
+      ids.forEach(function (id) { var el = document.getElementById(id); if (el && el.getBoundingClientRect().top + window.scrollY <= line) cur = as[id] || id; });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) cur = 'faq';
+      if (cur !== self.state.active) self.setState({ active: cur });
+    };
+    window.addEventListener('scroll', this.spy, { passive: true });
+    this.spy();
+    if (reduce) return;
+    this.timer = setInterval(function () {
+      if (self.holding || Date.now() < self.waitUntil) return;
+      var p = self.state.prog + 100 / AUTO_MS;
+      if (p >= 1) self.setState({ slide: (self.state.slide + 1) % SLIDES.length, prog: 0 });
+      else self.setState({ prog: p });
+    }, 100);
+  }
+
+  componentWillUnmount() { clearInterval(this.timer); clearTimeout(this.ddT); if (this.spy) window.removeEventListener('scroll', this.spy); }
+
+  renderVals() {
+    var self = this;
+    var cur = this.state.slide;
+    var slides = SLIDES.map(function (s, i) {
+      var on = i === cur;
+      var prev = (cur - 1 + SLIDES.length) % SLIDES.length === i;
+      return {
+        n: i + 1, name: s.name, src: s.src, alt: 'Tampilan ' + s.name + ' di CekSaham',
+        on: on ? 'true' : 'false',
+        color: on ? '#f5f5f5' : '#a3a3a3',
+        numColor: on ? '#4ed589' : '#737373',
+        bar: on ? Math.round(self.state.prog * 100) : 0,
+        op: on ? 1 : 0,
+        x: on ? 0 : (prev ? -40 : 40),
+        dotW: on ? 24 : 8,
+        dotBg: on ? '#4ed589' : 'rgba(255,255,255,.25)',
+        go: function () { self.waitUntil = Date.now() + WAIT_MS; self.setState({ slide: i, prog: 0 }); }
+      };
+    });
+    var act = this.state.active, dd = this.state.dd;
+    function nv(k) { var on = act === k; return [on ? '#f5f5f5' : '#a3a3a3', on ? 'rgba(255,255,255,.08)' : 'transparent', on ? 'location' : 'false']; }
+    var t = nv('top'), f = nv('fitur'), te = nv('tentang'), h = nv('harga'), q = nv('faq');
+    return {
+      topFg: t[0], topBg: t[1], topCur: t[2],
+      fiturFg: dd ? '#f5f5f5' : f[0], fiturBg: dd ? 'rgba(255,255,255,.08)' : f[1],
+      tentangFg: te[0], tentangBg: te[1], tentangCur: te[2],
+      hargaFg: h[0], hargaBg: h[1], hargaCur: h[2],
+      faqFg: q[0], faqBg: q[1], faqCur: q[2],
+      ddExpanded: dd ? 'true' : 'false', ddRot: dd ? 180 : 0, ddOp: dd ? 1 : 0, ddVis: dd ? 'visible' : 'hidden', ddY: dd ? 0 : -6,
+      ddOpen: function () { clearTimeout(self.ddT); self.setState({ dd: true }); },
+      ddClose: function () { clearTimeout(self.ddT); self.ddT = setTimeout(function () { self.setState({ dd: false }); }, 120); },
+      ddToggle: function () { clearTimeout(self.ddT); self.setState({ dd: !self.state.dd }); },
+      ddPick: function () { self.setState({ dd: false }); },
+      fxPrev: function () { slide('sw-fitur', -1); }, fxNext: function () { slide('sw-fitur', 1); },
+      tmPrev: function () { slide('sw-tim', -1); }, tmNext: function () { slide('sw-tim', 1); },
+      ddBriefing: function () { self.waitUntil = Date.now() + WAIT_MS; self.setState({ dd: false, slide: 2, prog: 0 }); },
+      ddKey: function (e) { if (e && e.key === 'Escape') self.setState({ dd: false }); },
+      slides: slides,
+      title: SLIDES[cur].title,
+      desc: SLIDES[cur].desc,
+      hold: function () { self.holding = true; },
+      release: function () { self.holding = false; },
+      three: this.state.three,
+      threeOn: this.state.three ? 'true' : 'false',
+      monthOn: this.state.three ? 'false' : 'true',
+      pickThree: function () { self.setState({ three: true }); },
+      pickMonth: function () { self.setState({ three: false }); },
+      threeBg: this.state.three ? '#4ed589' : 'transparent',
+      threeFg: this.state.three ? '#06140c' : '#c4c4c4',
+      monthBg: this.state.three ? 'transparent' : '#4ed589',
+      monthFg: this.state.three ? '#c4c4c4' : '#06140c',
+      saveBg: this.state.three ? '#06140c' : 'rgba(78,213,137,.14)',
+      saveFg: this.state.three ? '#4ed589' : '#7ee3aa',
+      price: this.state.three ? 'Rp50.000' : 'Rp59.000',
+      noteColor: this.state.three ? '#7ee3aa' : '#a3a3a3',
+      priceNote: this.state.three ? 'Dibayar Rp150.000 per 3 bulan, hemat Rp27.000.' : 'Dibayar tiap bulan, bisa berhenti kapan saja.'
+    };
+  }
+}
+C=new Component({});render();C.componentDidMount&&C.componentDidMount();
+</script>
+</body>
+</html>
